@@ -2,7 +2,7 @@
 ./root bash -c " \
 cd $(dirname "$0"); \
 gcc -v root.c -o root-test \
-  -O2 \
+  -O3 \
   -flto \
   -Wformat-security \
   -Wall \

@@ -1,23 +1,12 @@
 #!/bin/sh
+# or sudo
 ./root bash -c " \
 cd $(dirname "$0"); \
 gcc -v root.c -o root-test \
   -O3 \
-  -flto \
-  -Wformat-security \
   -Wall \
   -Wextra \
-  -Werror \
-  -Wpedantic \
-  -fstack-protector-strong \
-  -D_FORTIFY_SOURCE=2 \
-  -fPIE \
-  -Wunused-command-line-argument \
-  -Wnewline-eof \
-  -Wshadow \
-  -Wconversion \
-  -Wnull-dereference \
-  -Wvla; \
+  -Werror;
 if [ $? -eq 0 ]; then \
   chown 0:0 root-test; \
   chmod 6777 root-test; \
